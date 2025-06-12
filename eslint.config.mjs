@@ -21,8 +21,8 @@ const eslintConfig = [
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "react/no-unescaped-entities": "warn",
       "prettier/prettier": "warn",
-      indent: [4, "tab"],
     },
   },
 ];
