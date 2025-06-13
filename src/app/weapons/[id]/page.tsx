@@ -18,20 +18,19 @@ export async function generateStaticParams() {
 	}));
 }
 
-export default function WeaponDetailPage({
+export default async function WeaponDetailPage({
 	params,
 }: {
-	params: { id: string };
+	params: Promise<{ id: string }>;
 }) {
-	console.log(params);
+	const weaponId = (await params).id;
 	const weapon = Weapons.find(
-		(weapon) => weapon.name.toLowerCase() === params.id,
+		(weapon) => weapon.name.toLowerCase() === weaponId,
 	);
 
 	if (!weapon) {
 		notFound();
 	}
-	const weaponId = weapon.name.toLowerCase().replace(" ", "-");
 
 	return (
 		<main className="flex min-h-screen flex-col">
