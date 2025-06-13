@@ -8,27 +8,27 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "ValDex - A Valorant Encyclopedia",
-    template: "ValDex - %s",
-  },
-  description: "A comprehensive encyclopedia of Valorant",
+	title: {
+		default: "ValDex - A Valorant Encyclopedia",
+		template: "ValDex - %s",
+	},
+	description: "A comprehensive encyclopedia of Valorant",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-background`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" suppressHydrationWarning>
+			<body className={`${inter.className} bg-background`}>
+				<ThemeProvider attribute="class" defaultTheme="dark">
+					<Header />
+					{children}
+					<Footer />
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }
